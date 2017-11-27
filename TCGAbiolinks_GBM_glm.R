@@ -186,27 +186,6 @@ shapiro.test(as.numeric(prim_mat_subset[100,]))
 qqnorm(prim_mat_subset[100,])
 qqline(prim_mat_subset[100,])
 
-# #which(prim_mat_subset==0, arr.ind=TRUE)
-# 
-# #convert 0s to 1s to avoid inf after log2 transformation
-# prim_mat_subset[prim_mat_subset == 0] <- 1
-# 
-# prim_log2 = log2(prim_mat_subset)
-# prim_log2[1:5,1:5]
-# hist(prim_log2[,6])
-# 
-# #remove all rows (genes) where value is 0 for every observation
-# p_log2_rSumNotZero = prim_log2[as.logical(rowSums(prim_log2 != 0)), ]
-# p_log2_rSumNotZero[1:5,1:5]
-# hist(p_log2_rSumNotZero[,6])
-# 
-# #not normal dist yet
-# shapiro.test(as.numeric(p_log2_rSumNotZero[100,]))
-# qqnorm(p_log2_rSumNotZero[100,])
-# qqline(p_log2_rSumNotZero[100,])
-# 
-# prim_preSplits = t(p_log2_rSumNotZero)
-# prim_preSplits[56:62,51717:51722]
 
 prim_preSplits = t(prim_mat_subset)
 dim(prim_preSplits)
@@ -214,7 +193,7 @@ prim_preSplits[57:62,51717:51722]
 
 
 #####
-##### to assess LASSO without controls, drop last 5 rows here
+##### to assess LASSO without "healthy" controls, drop last 5 rows here
 #####
 
 healthy
@@ -227,7 +206,7 @@ prim_idhWT_grp = prim_idhWT$group[-hlth_grp]
 prim_idhWT_grp
 
 ####
-#### remove columns with no variance
+#### remove columns with no variance or remove later with caret preProcess()
 ####
 # nzv <- nearZeroVar(prim_preSplits, saveMetrics= TRUE)
 # nzv[nzv$nzv,][1:10,]
