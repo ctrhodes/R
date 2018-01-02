@@ -6,27 +6,6 @@ rm(list=ls(all=TRUE))
 
 require(mosaic)
 require(tidyverse)
-
-#data manipulation
-require(hms)
-require(stringr)
-require(lubridate)
-require(forcats)
-require(reshape2)
-
-#data import
-require(DBI)
-require(haven)
-require(httr)
-require(jsonlite)
-require(readxl)
-require(rvest)
-require(xml2)
-
-#modeling
-require(modelr)
-require(broom)
-require(caret)
 require(plotly)
 
 Sys.setenv("plotly_username"="USERNAME")
@@ -37,25 +16,11 @@ set.seed(123)
 search() #find attached datasets, objects, etc
 #searchpaths() #find objects and paths
 #sessionInfo() #check everythin else
-######
 
 ######
-#convert data frame or matrix into tibble, with rownames mutated
-#into feature in first column --> never trust a row name in R...
-#input: dataframe or matrix WITH rownames (i.e. mtcars)
-#not nec if object has no rownames (i.e. iris)
-tbldf_rnames = function (df) {
-  draw_rownames <- function (.data) {.data %>%
-      do(mutate(.,rownames=rownames(.)))
-  }
-  myData = tbl_df(df) %>%
-    draw_rownames() %>%
-    select(rownames, everything())
-}
 
 #function for importing entire excel spreadsheet:
 #convert xls workbook to list, each xls sheet to list element as tibble
-#(no tbl_df() nec)
 read_excel_allsheets <- function(filename) {
   sheets <- readxl::excel_sheets(filename)
   x <- lapply(sheets, function(X) 
@@ -80,7 +45,7 @@ name=c(name, "dataFrame2")
 excel <- vector("list", 2)
 #then populate the list
 excel[[1]] <- dataFrame1[,c("col1","col2","col3")]
-excel[[1]] <- dataFrame2[,c("col1","col2","col3")]
+excel[[2]] <- dataFrame2[,c("col1","col2","col3")]
 name=c("dataFrame1", "dataFrame2")
 
 #writing excel file
