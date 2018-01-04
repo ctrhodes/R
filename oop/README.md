@@ -14,6 +14,6 @@ While the ad hoc nature of the S3 class system can be very useful, it can also m
 
 dog = function(n,a,b) {
 value = list(name=n, age=a, breed=b)
-attr(value, "class") = dog
+attr(value, "class") = "dog"
 value
 }
