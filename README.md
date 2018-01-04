@@ -1,13 +1,8 @@
-# utils_R
+# R
 
-Some utility functions I commonly use in R
+This repo contains:
 
-Includes:
+1. A quick reference for R based object-oriented programming (OOP). In the OOP dir, I have tried to include references that conform to Bioconductor best practices for developing packages.
 
-An initialization step to clear all objects in memory
+2. Various helper functions I often use, which I place in my utilities folder.
 
-A simple function to easily make proportional Venn diagrams
-
-Prediciton of MRI classified tumors using TCGA data and generlized linear model with LASSO regularization.
-
-Differential expression analysis of TCGA data.
