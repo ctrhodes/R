@@ -4,10 +4,12 @@ Some utility functions I commonly use in R
 
 Includes:
 
-An initialization step to clear all objects in memory
+An quick initialization step to clear all objects in memory.
 
-A simple function to easily make proportional Venn diagrams
+An extended initialization step to clear all objects in memory and load some import functions.
 
-Prediciton of MRI classified tumors using TCGA data and generlized linear model with LASSO regularization.
+A simple function to easily make proportional Venn diagrams.
 
-Differential expression analysis of TCGA data.
+Calculating interval ranges.
+
+Monte Carlo simulation using summarize gene expression info.
