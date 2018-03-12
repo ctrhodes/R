@@ -6,3 +6,5 @@ This repo contains utility scripts and helper functions I use in R. This reposit
 
 2. Various helper functions I often use, which I place in my utilities folder.
 
+3. Miscellaneous scripts I am currently working on. Right now that includes:
+   Prediciton of MRI classified tumors using TCGA data and a generlized linear model with LASSO regularization.
