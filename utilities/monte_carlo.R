@@ -14,6 +14,7 @@ pkgs = paste('package:', pkg, sep = "")
 lapply(pkgs, detach, character.only = TRUE, unload = TRUE)
 rm(list = ls(all=TRUE))
 
+# Some example expression data taken from a published EZH2 knockout paper.
 expr = data.frame(Gene = c("EZH2", "FOXA2", "HMX1", "HOXA5", "HOXA6", "PAX5", "S16"),
                   Mean_Cont = c(30.22627, 30.178621, 23.289217, 22.996525, 29.920652, 12.64944, 24.40246),
                   SD_Cont = c(1.1, 1.0, 1.5, 0.9, 1.2, 2.1, 1.1), 
